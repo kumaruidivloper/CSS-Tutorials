@@ -50,19 +50,20 @@ export class AppComponent implements OnInit {
     let seconds:number | string = date.getSeconds();
       
     
-      // add zero befor sigle digit number
-      hour  = (hour < 10) ? '0' + hour : hour
+      // add zero befor single digit number
+      // hour  = (hour < 10) ? '0' + hour : hour
       minutes  = (minutes < 10) ? '0' + minutes : minutes
       seconds  = (seconds < 10) ? '0' + seconds : seconds
 
       // conver 24hr clock to 12hr clock
       if(hour > 12) {
         hour = +hour - 12;
+        hour  = (hour < 10) ? '0' + hour : hour
       }
 
       this.hour.nativeElement.innerHTML = hour;
       this.minutes.nativeElement.innerHTML = minutes;
       this.seconds.nativeElement.innerHTML = seconds;
-      this.ampm.nativeElement.innerHTML = hour >= 12 ? 'PM' : 'AM';
+      this.ampm.nativeElement.innerHTML = hour >= 12 ? 'AM' : 'PM';
   }
 }
