@@ -1,45 +1,82 @@
-section {
-    position: fixed;
+header {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: #333;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 
-    .sec {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 10;     
+    .logo {
+        color: #112434;
+        font-weight: 700;
+        font-size: 2em;
+        text-decoration: none;
     }
 
-    .sec.sec1 {
-        background: #b0ff54;
-        clip-path: circle(300px at 0 0);
-        h2 {
-            color: transparent;
-            -webkit-text-stroke: 5px #333333;
+    .navigation {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        gap: 40px;
+
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                padding: 6px 15px;
+                color: #112434;
+                border-radius: 20px;
+            }
+            a:hover,
+            a:hover, .active {
+                background: #112434;
+                color: #ffffff;
+            }
         }
-      }
+    }
+}
 
-      .sec.sec2 {
-        background: #03a9f4;
-        clip-path: circle(200px at 100% 100%);
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
-        h2 {
-            color: #333333;
-            -webkit-text-stroke: 5px #ffffff;
-        }
-      }
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+    }
 
-      h2 {
+    #text {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        font-size: 18em;
-      }  
-  }
+        font-size: 4em;
+        color: #112434;
+    }
+}
 
+.sec {
+    position: relative;
+    padding: 100px;
+    background: #112434;
+
+    h2 {
+        font-size: 3em;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1em;
+        color: #fff;
+        font-weight: 300;
+    }
+}
